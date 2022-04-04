@@ -22,4 +22,13 @@ class User(UserMixin, db.Model):
 
   def check_password(self, password):
     return check_password_hash(self.password_hash, password)
-    
+
+
+class DinnerParty(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  date = db.Column(db.String(140))
+  venue = db.Column(db.String(140))
+  main_dish = db.Column(db.String(140))
+  number_seats = db.Column(db.Integer)
+  party_host_id = db.Column(db.Integer)
+  attendees = db.Column(db.String(256))
