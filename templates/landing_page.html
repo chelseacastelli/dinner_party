@@ -1,0 +1,13 @@
+<head>
+    <h1>Dinner Party Guests</h1>
+</head>
+{% if current_users|length == 0 %}
+    <p style="color:blue;"> Ooops. There are no users currently in your database. Make sure to add them first. </p>
+{% endif %}
+
+{% for user in current_users %}
+<ul>
+    <li>{{user.username}}</li>
+</ul>
+{% endfor %}
+  
